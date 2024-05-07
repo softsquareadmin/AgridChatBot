@@ -7,3 +7,5 @@ pinecone-client==2.2.4
 python-dotenv==1.0.0
 openai==1.8.0
 sentence-transformers==2.2.2
+langchain_pinecone
+langchain
