@@ -147,7 +147,7 @@ qa_chain = ConversationalRetrievalChain.from_llm(
     verbose=True,
     return_source_documents=True,
     combine_docs_chain_kwargs={"prompt": qa_prompt},
-    rephrase_question = False,
+    rephrase_question = True,
     response_if_no_docs_found = "Sorry, I dont know",
     memory = st.session_state.buffer_memory,
     
