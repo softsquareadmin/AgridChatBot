@@ -56,12 +56,12 @@ st.markdown("""
                    text-align: center;
                    background-color: #f1f1f1;
                    z-index: 9">
-        Chat with AI 💬
+        Chat with AGrid AI Bot
     </h1>
 """, unsafe_allow_html=True)
 
 if 'responses' not in st.session_state:
-    st.session_state['responses'] = ["How can I assist you?"]
+    st.session_state['responses'] = ["Hi there, I am your AGrid Assist. How can I help you today?"]
 
 if 'requests' not in st.session_state:
     st.session_state['requests'] = []
