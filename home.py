@@ -16,8 +16,6 @@ from dotenv import load_dotenv
 from langchain.chains import ConversationalRetrievalChain
 from langchain.chat_models import ChatOpenAI
 
-
-
 def render_animation():
     path = "assets/typing_animation.json"
     with open(path,"r") as file: 
