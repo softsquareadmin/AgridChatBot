@@ -30,7 +30,6 @@ def get_conversation_string():
         conversation_string += "Bot: "+ st.session_state['responses'][i+1] + "\n"
     return conversation_string
 
-
 st.set_page_config(
     page_title="Softsquare AI",
     page_icon="🤖",
