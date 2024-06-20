@@ -9,8 +9,7 @@ from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.prompts import (
     SystemMessagePromptTemplate,
     HumanMessagePromptTemplate,
-    ChatPromptTemplate,
-    MessagesPlaceholder
+    ChatPromptTemplate
 )
 from dotenv import load_dotenv
 from langchain.chains import ConversationalRetrievalChain
@@ -36,7 +35,7 @@ st.set_page_config(
 )
 
 load_dotenv()
-
+openaiModels = st.secrets["OPENAI_MODEL"]
 # Load Animation
 typing_animation_json = render_animation()
 hide_st_style = """ <style>
@@ -73,7 +72,7 @@ if 'prevent_loading' not in st.session_state:
     st.session_state['prevent_loading'] = False
 
 embeddings = OpenAIEmbeddings()
-llm = ChatOpenAI(temperature=0, model='gpt-3.5-turbo')
+llm = ChatOpenAI(temperature=0, model=openaiModels)
 pinecone_index = 'agrid-document'
 vector_store = PineconeVectorStore(index_name=pinecone_index, embedding=embeddings)
 
