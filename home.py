@@ -14,6 +14,7 @@ from langchain.prompts import (
 from dotenv import load_dotenv
 from langchain.chains import ConversationalRetrievalChain
 from langchain.chat_models import ChatOpenAI
+from portkey_ai import createHeaders, PORTKEY_GATEWAY_URL
 
 def render_animation():
     path = "assets/typing_animation.json"
@@ -36,6 +37,8 @@ st.set_page_config(
 
 load_dotenv()
 openaiModels = st.secrets["OPENAI_MODEL"]
+portKeyApi = st.secrets["PORTKEY_API_KEY"]
+
 # Load Animation
 typing_animation_json = render_animation()
 hide_st_style = """ <style>
@@ -72,7 +75,15 @@ if 'prevent_loading' not in st.session_state:
     st.session_state['prevent_loading'] = False
 
 embeddings = OpenAIEmbeddings()
-llm = ChatOpenAI(temperature=0, model=openaiModels)
+
+portkey_headers = createHeaders(api_key=portKeyApi,provider="openai")
+
+llm = ChatOpenAI(temperature=0,
+                model=openaiModels,
+                base_url=PORTKEY_GATEWAY_URL,
+                default_headers=portkey_headers
+               )
+
 pinecone_index = 'agrid-document'
 vector_store = PineconeVectorStore(index_name=pinecone_index, embedding=embeddings)
 
