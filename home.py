@@ -15,6 +15,7 @@ from dotenv import load_dotenv
 from langchain.chains import ConversationalRetrievalChain
 from langchain.chat_models import ChatOpenAI
 from portkey_ai import createHeaders, PORTKEY_GATEWAY_URL
+from streamlit_cookies_controller import CookieController
 
 def render_animation():
     path = "assets/typing_animation.json"
@@ -74,9 +75,33 @@ if 'selected_product_type' not in st.session_state:
 if 'prevent_loading' not in st.session_state:
     st.session_state['prevent_loading'] = False
 
-embeddings = OpenAIEmbeddings()
+if 'email' not in st.session_state:
+    st.session_state['email'] = ''
 
-portkey_headers = createHeaders(api_key=portKeyApi,provider="openai")
+embeddings = OpenAIEmbeddings()
+controller = CookieController()
+
+with st.sidebar:
+    emailInput = st.text_input("Enter Your Email")
+    if emailInput != '' and emailInput != None:
+        controller.set("email_id",emailInput)
+
+email_id = str(controller.get('email_id'))
+user_id = controller.get("ajs_anonymous_id")
+
+st.session_state.email = email_id
+
+
+if email_id != '' and email_id != None and email_id != 'None':
+    st.markdown("""
+    <style>
+        section[data-testid="stSidebar"][aria-expanded="true"]{
+            display: none;
+        }
+    </style>
+    """, unsafe_allow_html=True)
+
+portkey_headers = createHeaders(api_key=portKeyApi,provider="openai", metadata={"email_id": email_id, "_user_id" :user_id } )
 
 llm = ChatOpenAI(temperature=0,
                 model=openaiModels,
