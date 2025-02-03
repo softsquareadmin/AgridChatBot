@@ -1,5 +1,5 @@
-langchain_pinecone>=0.0.5
-langchain>=0.2.11
+langchain-pinecone==0.0.3
+langchain==0.2.11
 streamlit==1.36.0
 streamlit_chat
 streamlit_lottie
@@ -11,4 +11,4 @@ tiktoken==0.7.0
 portkey_ai==1.7.0
 streamlit_cookies_controller==0.0.4
 openai==1.37.0
-langchain-openai==0.1.16
+langchain-openai==0.1.17

@@ -84,8 +84,7 @@ if 'email' not in st.session_state:
     st.session_state['email'] = ''
 
 embeddings = OpenAIEmbeddings(
-    openai_api_key=OPENAI_API_KEY,
-     verbose=True
+    openai_api_key=OPENAI_API_KEY
 )
 controller = CookieController()
 
