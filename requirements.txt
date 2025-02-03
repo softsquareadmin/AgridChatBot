@@ -1,6 +1,6 @@
 langchain_pinecone==0.0.3
 langchain==0.2.11
-streamlit==1.36.1
+streamlit==1.36.0
 streamlit_chat
 streamlit_lottie
 streamlit_pills
