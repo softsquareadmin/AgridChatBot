@@ -5,7 +5,8 @@ from dotenv import load_dotenv
 from streamlit_lottie import st_lottie_spinner
 from langchain.memory import ConversationBufferMemory
 from langchain_pinecone import PineconeVectorStore
-from langchain.embeddings.openai import OpenAIEmbeddings
+# from langchain.embeddings.openai import OpenAIEmbeddings
+from langchain_openai import OpenAIEmbeddings
 from langchain.prompts import (
     SystemMessagePromptTemplate,
     HumanMessagePromptTemplate,
@@ -79,9 +80,7 @@ if 'prevent_loading' not in st.session_state:
 if 'email' not in st.session_state:
     st.session_state['email'] = ''
 
-embeddings = OpenAIEmbeddings(
-    openai_api_key=OPENAI_API_KEY
-)
+embeddings = OpenAIEmbeddings()
 controller = CookieController()
 
 with st.sidebar:
