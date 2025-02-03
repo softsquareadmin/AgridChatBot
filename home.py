@@ -39,6 +39,7 @@ st.set_page_config(
 load_dotenv()
 openaiModels = st.secrets["OPENAI_MODEL"]
 portKeyApi = st.secrets["PORTKEY_API_KEY"]
+OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
 
 # Load Animation
 typing_animation_json = render_animation()
@@ -78,7 +79,9 @@ if 'prevent_loading' not in st.session_state:
 if 'email' not in st.session_state:
     st.session_state['email'] = ''
 
-embeddings = OpenAIEmbeddings()
+embeddings = OpenAIEmbeddings(
+    openai_api_key=OPENAI_API_KEY
+)
 controller = CookieController()
 
 with st.sidebar:
