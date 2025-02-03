@@ -12,4 +12,4 @@ tiktoken==0.7.0
 portkey_ai==1.7.0
 streamlit_cookies_controller==0.0.4
 langchain-openai==0.1.17
-langchain-core==0.2.23
+langchain-core==0.1.52
