@@ -17,6 +17,8 @@ from langchain.chains import ConversationalRetrievalChain
 from langchain.chat_models import ChatOpenAI
 from portkey_ai import createHeaders, PORTKEY_GATEWAY_URL
 from streamlit_cookies_controller import CookieController
+import openai
+
 
 def render_animation():
     path = "assets/typing_animation.json"
@@ -41,6 +43,7 @@ load_dotenv()
 openaiModels = st.secrets["OPENAI_MODEL"]
 portKeyApi = st.secrets["PORTKEY_API_KEY"]
 OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
+openai.api_key = OPENAI_API_KEY
 
 # Load Animation
 typing_animation_json = render_animation()
@@ -80,7 +83,10 @@ if 'prevent_loading' not in st.session_state:
 if 'email' not in st.session_state:
     st.session_state['email'] = ''
 
-embeddings = OpenAIEmbeddings()
+embeddings = OpenAIEmbeddings(
+    openai_api_key=OPENAI_API_KEY,
+     verbose=True
+)
 controller = CookieController()
 
 with st.sidebar:
