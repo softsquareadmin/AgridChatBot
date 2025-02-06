@@ -35,8 +35,8 @@ def get_conversation_string():
     return conversation_string
 
 st.set_page_config(
-    page_title="AGrid Chatbot AI",
-    page_icon="🤖",
+    page_title="AGrid - AI Chatbot",
+    page_icon=f"https://raw.githubusercontent.com/softsquareadmin/chatbotgallery/main/AGrid%20Logo%203.png",
 )
 
 load_dotenv()
@@ -60,9 +60,11 @@ st.markdown("""
                    width: 100%;
                    text-align: center;
                    background-color: #f1f1f1;
-                   z-index: 9">
-        Chat with AGrid AI Bot
+                  ">
+        AGrid - AI Chatbot
+            <p>One-step solution for managing and visualizing Salesforce data effortlessly.</p>
     </h1>
+    
 """, unsafe_allow_html=True)
 
 st.markdown(
@@ -81,12 +83,57 @@ st.markdown(
 st.markdown(
     """
     <style>
-        iframe ~ * {
-            display: none;
-        }
+    /* Ensure the entire page uses a flexbox layout */
+    .main {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100vh;
+        padding: 0;
+        margin: 0;
+    }
+
+    /* Chat container styling */
+    .stApp {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100vh;
+        padding: 0;
+        margin: 0;
+    }
+
+    /* Chat input should stick to the bottom */
+    .stChatInput {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        max-width: 800px; /* Adjust based on your design */
+        margin: 0 auto;
+        z-index: 9999;
+        background-color: #fff;
+        border-top: 1px solid #ddd;
+    }
     </style>
     """,
-    unsafe_allow_html=True
+    unsafe_allow_html=True,
+)
+
+st.markdown(
+    """
+    <style>
+    /* Hide the span tag by class name */
+    .st-emotion-cache-gi0tri.e1nzilvr1 {
+        display: none !important;
+    }
+
+    /* Optional: Hide the span tag with a specific data-testid */
+    [data-testid="stHeaderActionElements"] {
+        display: none !important;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
 )
 
 if 'responses' not in st.session_state:
