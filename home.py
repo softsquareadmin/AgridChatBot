@@ -72,8 +72,7 @@ st.markdown(
     <style>
     .css-1jc7ptx, .e1ewe7hr3, .viewerBadge_container__1QSob,
     .styles_viewerBadge__1yB5_, .viewerBadge_link__1S137,
-    ._container_gzau3_1._viewerBadge_nim44_23,
-    ._profileContainer_gzau3_53,
+    ._container_gzau3_1, ._profileContainer_gzau3_53,
     .viewerBadge_text__1JaDK {
         display: none;
     }
