@@ -62,7 +62,7 @@ st.markdown("""
                    background-color: #f1f1f1;
                   ">
         AGrid - AI Chatbot
-            <p>AGrid is a Salesforce AppExchange product that provides a \n one-step solution for effortlessly managing and visualizing Salesforce data.</p>
+            <p>AGrid is a Salesforce AppExchange product that provides a <br> one-step solution for effortlessly managing and visualizing Salesforce data.</p>
     </h1>
     
 """, unsafe_allow_html=True)
@@ -162,7 +162,7 @@ embeddings = OpenAIEmbeddings(
 controller = CookieController()
 
 with st.sidebar:
-    emailInput = st.text_input("Enter Your Email")
+    emailInput = st.text_input("Enter Your Email (optional)")
     if emailInput != '' and emailInput != None:
         controller.set("email_id",emailInput)
 
