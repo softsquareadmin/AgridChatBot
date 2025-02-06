@@ -60,6 +60,7 @@ st.markdown("""
                    width: 100%;
                    text-align: center;
                    background-color: #f1f1f1;
+                   z-index: 9
                   ">
         AGrid - AI Chatbot
             <p>AGrid is a Salesforce AppExchange product that provides a <br> one-step solution for effortlessly managing and visualizing Salesforce data.</p>

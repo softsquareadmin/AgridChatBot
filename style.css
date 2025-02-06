@@ -38,7 +38,7 @@ div.st-emotion-cache-1y4p8pa {
     width: 100% !important;
     text-align: center !important;
     background-color: #f1f1f1 !important;
-    /* z-index: 9999 !important; */
+    z-index: 9999 !important;
 }
 
 h1 {
@@ -48,4 +48,13 @@ h1 {
 
 p {
     font-size:small !important;
+}
+
+div.st-emotion-cache-0 {
+    max-height: 600px !important;
+    overflow: scroll !important;
+}
+
+body {
+    overflow-y: hidden !important;
 }
