@@ -63,7 +63,7 @@ st.markdown("""
                    z-index: 9
                   ">
         AGrid - AI Chatbot
-            <p>AGrid is a Salesforce AppExchange product that provides a <br> one-step solution for effortlessly managing and visualizing Salesforce data.</p>
+            <p>AGrid is a Salesforce AppExchange product that provides by Softsquare. <br> one-step solution for effortlessly managing and visualizing Salesforce data.</p>
     </h1>
     
 """, unsafe_allow_html=True)
