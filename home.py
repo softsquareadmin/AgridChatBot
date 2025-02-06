@@ -111,8 +111,8 @@ st.markdown(
         width: 100%;
         max-width: 800px; /* Adjust based on your design */
         margin: 0 auto;
+        margin-bottom: 50px;
         z-index: 9999;
-        background-color: #fff;
         border-top: 1px solid #ddd;
     }
     </style>
