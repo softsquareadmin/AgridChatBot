@@ -109,12 +109,12 @@ st.markdown(
     .stChatInput {
         position: fixed;
         bottom: 0;
-        width: 100%;
+        width: 95%;
         max-width: 800px; /* Adjust based on your design */
         margin: 0 auto;
         z-index: 9999;
         border-top: 1px solid #ddd;
-        # margin-bottom: 10px;
+        margin-bottom: 10px;
     }
     </style>
     """,
@@ -134,6 +134,21 @@ st.markdown(
     [data-testid="stHeaderActionElements"] {
         display: none !important;
     }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
+st.markdown(
+    """
+    <style>
+        div img[alt="App Creator Avatar"] {
+            display: none !important;
+        }
+ 
+        a[href="https://streamlit.io/cloud"] {
+            display: none !important;
+        }
     </style>
     """,
     unsafe_allow_html=True,
