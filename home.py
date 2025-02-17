@@ -112,12 +112,13 @@ st.markdown(
         width: 100%;
         max-width: 800px; /* Adjust based on your design */
         margin: 0 auto;
-        margin-bottom: 50px;
         z-index: 9999;
         border-top: 1px solid #ddd;
+        # margin-bottom: 10px;
     }
     </style>
     """,
+    # margin-bottom: 50px;
     unsafe_allow_html=True,
 )
 
