@@ -178,10 +178,12 @@ embeddings = OpenAIEmbeddings(
 )
 controller = CookieController()
 
-with st.sidebar:
-    emailInput = st.text_input("Enter Your Email (optional)")
-    if emailInput != '' and emailInput != None:
-        controller.set("email_id",emailInput)
+# with st.sidebar:
+#     emailInput = st.text_input("Enter Your Email (optional)")
+#     if emailInput != '' and emailInput != None:
+#         controller.set("email_id",emailInput)
+
+controller.set("email_id","")
 
 email_id = str(controller.get('email_id'))
 user_id = controller.get("ajs_anonymous_id")
@@ -192,7 +194,7 @@ st.session_state.email = email_id
 if email_id != '' and email_id != None and email_id != 'None':
     st.markdown("""
     <style>
-        section[data-testid="stSidebar"][aria-expanded="true"]{
+        section[data-testid="stSidebar"][aria-expanded="False"]{
             display: none;
         }
     </style>
